@@ -1,5 +1,6 @@
 
 const express = require("express");
+require('./db/mongoose')
 const app = express();
 app.use(express.json());
 const users = [
@@ -13,16 +14,17 @@ const users = [
 app.get('/' , (req , res) => {
     res.send("hello world")
 })
-app.get('/api/users', (req , res) => {
+app.get('/users', (req , res) => {
     res.send(users);
 })
 
-app.post('/api/users', (req , res) => {
+app.post('/users', (req , res) => {
     
     const user = {
         id: users.length + 1,
-        name:req.body.name ,
-        num:req.body.num
+       firstname: req.body.firstname ,
+       contact: req.body.contact,
+       email: req.body.email
     }
     users.push(user)
     res.send(user)

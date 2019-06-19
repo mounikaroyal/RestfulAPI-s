@@ -38,7 +38,6 @@ app.post('/api/users', (req , res) => {
     }
     users.push(user)
     res.send(user)
-})
-.listen(3000)
+}) .listen(3000)
 
-console.log('server running at http://127.0.0.21:3000');
+// console.log('server running at http://106.51.97.72:3000');

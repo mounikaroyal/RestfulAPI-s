@@ -17,7 +17,7 @@ app.get('/' , (req , res) => {
     });
     app.get('/api/users/:id' , (req , res) => {
      const user =  users.find(c => c.id === parseInt(req.params.id));
-     if (!user) res.status(404).send('The users code is not visible.');
+     if (!user) res.status(404).send('The users information is not visible.');
     res.send(user);
     })
     // app.get('/api/posts/:year/:month' , (req , res)  => {
